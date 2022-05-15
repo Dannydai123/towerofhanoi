@@ -13,8 +13,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import * as PropTypes from "prop-types";
 
 
-import Counter1 from "./Components/Counter1";
+// import Counter1 from "./Components/Counter1";
 
+import TemperatureWrapper from "./Components/TemperatureWrapper"
 class App extends Component {
 
 //     constructor() {
@@ -31,8 +32,8 @@ class App extends Component {
         return (
             <div className="container">
 
-                <Counter1 />
-
+                {/*<Counter1 />*/}
+            <TemperatureWrapper />
 
 
 
