@@ -13,6 +13,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import * as PropTypes from "prop-types";
 
 
+import Counter1 from "./Components/Counter1";
+
 class App extends Component {
 
 //     constructor() {
@@ -27,9 +29,15 @@ class App extends Component {
 
     render() {
         return (
-            <div className='container'>
-                <p className='text-center h2'>Welcome to React</p>
-            </div>
+            <div className="container">
+
+                <Counter1 />
+
+
+
+
+
+</div>
         );
     }
 }
