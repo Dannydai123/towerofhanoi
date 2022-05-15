@@ -15,7 +15,10 @@ import * as PropTypes from "prop-types";
 
 // import Counter1 from "./Components/Counter1";
 
-import TemperatureWrapper from "./Components/TemperatureWrapper"
+// import TemperatureWrapper from "./Components/TemperatureWrapper"
+import SearchFilter from "./Components/SearchFilter";
+
+
 class App extends Component {
 
 //     constructor() {
@@ -32,8 +35,11 @@ class App extends Component {
         return (
             <div className="container">
 
-                {/*<Counter1 />*/}
-            <TemperatureWrapper />
+                {/*<Counter1 /> //Q2*/}
+            {/*<TemperatureWrapper /> //Q3*/}
+                <SearchFilter />  {/*  Q4 */}
+
+
 
 
 
