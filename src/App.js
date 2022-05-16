@@ -16,8 +16,8 @@ import * as PropTypes from "prop-types";
 // import Counter1 from "./Components/Counter1";
 
 // import TemperatureWrapper from "./Components/TemperatureWrapper"
-import SearchFilter from "./Components/SearchFilter";
-
+// import SearchFilter from "./Components/SearchFilter";
+import RegisterForm from "./Components/RegisterForm";
 
 class App extends Component {
 
@@ -37,8 +37,8 @@ class App extends Component {
 
                 {/*<Counter1 /> //Q2*/}
             {/*<TemperatureWrapper /> //Q3*/}
-                <SearchFilter />  {/*  Q4 */}
-
+            {/*    <SearchFilter />  /!*  Q4 *!/*/}
+             <RegisterForm />   {/*  Q5 *!*/}
 
 
 
