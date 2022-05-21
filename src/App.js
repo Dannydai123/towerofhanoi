@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // import {$} from 'jquery'
 
-import "bootstrap/dist/js/bootstrap.bundle.min";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
 import * as PropTypes from "prop-types";
 
 // import Counter1 from "./Components/Counter1";
@@ -17,7 +17,8 @@ import * as PropTypes from "prop-types";
 // import TemperatureWrapper from "./Components/TemperatureWrapper"
 // import SearchFilter from "./Components/SearchFilter";
 // import RegisterForm from "./Components/RegisterForm";
-import Quiz from "./Components/quiz";
+// import Quiz from "./Components/quiz";
+import Navbar from "./Components/Navbar";
 
 class App extends Component {
   //     constructor() {
@@ -32,12 +33,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid p-0">
         {/*<Counter1 /> //Q2*/}
         {/*<TemperatureWrapper /> //Q3*/}
         {/*    <SearchFilter />  /!*  Q4 *!/*/}
         {/*<RegisterForm /> /!*  Q5 *!*!/*/}
-        <Quiz />
+        {/*<Quiz /> //Q6*/}
+        <Navbar />
       </div>
     );
   }

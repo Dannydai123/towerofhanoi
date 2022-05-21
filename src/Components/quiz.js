@@ -51,6 +51,9 @@ class Quiz extends Component {
   //
   // }
 
+  
+  
+
   handleClickAnswerButton = (e) => {
     if (e.target.value === this.quiz[this.state.currentquestionId].correct) {
       console.log(this.state.currentquestionId);
