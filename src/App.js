@@ -20,6 +20,8 @@ import * as PropTypes from "prop-types";
 // import Quiz from "./Components/quiz";
 import Navbar from "./Components/Navbar";
 
+import LoginButton from "./Components/loginBtn";
+import Login from "./Components/Login";
 class App extends Component {
   //     constructor() {
   //         super();
@@ -33,13 +35,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container-fluid p-0">
+      <div className="container">
         {/*<Counter1 /> //Q2*/}
         {/*<TemperatureWrapper /> //Q3*/}
         {/*    <SearchFilter />  /!*  Q4 *!/*/}
         {/*<RegisterForm /> /!*  Q5 *!*!/*/}
         {/*<Quiz /> //Q6*/}
-        <Navbar />
+        {/*<Navbar />*/}
+        <Login />
       </div>
     );
   }
