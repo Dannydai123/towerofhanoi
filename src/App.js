@@ -22,6 +22,7 @@ import Navbar from "./Components/Navbar";
 
 import LoginButton from "./Components/loginBtn";
 import Login from "./Components/Login";
+import Bagels from "./Components/Bagels";
 class App extends Component {
   //     constructor() {
   //         super();
@@ -42,7 +43,8 @@ class App extends Component {
         {/*<RegisterForm /> /!*  Q5 *!*!/*/}
         {/*<Quiz /> //Q6*/}
         {/*<Navbar />*/}
-        <Login />
+        <Bagels />
+        {/*<Login />*/}
       </div>
     );
   }
