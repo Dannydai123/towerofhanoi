@@ -22,28 +22,51 @@ import Navbar from "./Components/Navbar";
 
 import LoginButton from "./Components/loginBtn";
 import Login from "./Components/Login";
-import Bagels from "./Components/Bagels";
-class App extends Component {
-  //     constructor() {
-  //         super();
-  //     }
-  // }
-  //
-  //     state = {
-  //
-  //
-  //     };
 
+//-------------------------------------------------
+// import Bagels from "./Components/Bagels";
+// class App extends Component {
+//   //     constructor() {
+//   //         super();
+//   //     }
+//   // }
+//   //
+//   //     state = {
+//   //
+//   //
+//   //     };
+//
+//   render() {
+//     return (
+//       <div className="container">
+//         {/*<Counter1 /> //Q2*/}
+//         {/*<TemperatureWrapper /> //Q3*/}
+//         {/*    <SearchFilter />  /!*  Q4 *!/*/}
+//         {/*<RegisterForm /> /!*  Q5 *!*!/*/}
+//         {/*<Quiz /> //Q6*/}
+//         {/*<Navbar />*/}
+//         <Bagels />
+//         {/*<Login />*/}
+//       </div>
+//     );
+//   }
+// }
+//
+// export default App;
+//-------------------------------------------------
+
+// timer tracking
+
+import TimerDashboard from "./Components/timer tracking/TimerDashboard";
+
+class App extends Component {
   render() {
     return (
       <div className="container">
-        {/*<Counter1 /> //Q2*/}
-        {/*<TemperatureWrapper /> //Q3*/}
-        {/*    <SearchFilter />  /!*  Q4 *!/*/}
-        {/*<RegisterForm /> /!*  Q5 *!*!/*/}
-        {/*<Quiz /> //Q6*/}
-        {/*<Navbar />*/}
-        <Bagels />
+        <p className="h4  text-center mt-2">Timers</p>
+       < hr />
+
+        <TimerDashboard />
         {/*<Login />*/}
       </div>
     );
