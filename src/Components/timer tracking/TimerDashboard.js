@@ -12,6 +12,12 @@ import EditablePanel from "./EditablePanel";
 import AddBtn from "./AddBtn";
 // import PropTypes from 'prop-types';
 
+import axios from "axios";
+import async from "async";
+
+axios.defaults.baseURL = 'http://localhost:3000';   //dev uses
+//axios.defaults.baseURL = 'http://localhost:3000';  // production uses for heroku
+
 class TimerDashboard extends Component {
 
 
@@ -38,8 +44,127 @@ class TimerDashboard extends Component {
           tickid: null
     }
 
+          this.state.defaultTimerForServer = {
+      id: 0,
+      title: '',
+      project: '',
+      timer: 0,  //elapsed time in second
+      laststarttime: null,
+      isCounting: false,
+      isUpdating: false,
+          tickid: null
+    }
+
+
 
   }
+
+
+  axiosGetTimers = async () => {
+
+
+        this.state.timerArray.splice(0)
+
+        console.log("before getting...", Date.now())
+
+        let res = await axios.get("api/timers",);
+
+        console.log("get timers", res )
+    const timerArrayServer = res.data;
+
+    timerArrayServer.forEach((timer) => {
+
+      this.state.defaultTimerForServer.id = parseInt(timer.id)
+      this.state.defaultTimerForServer.title = timer.title
+      this.state.defaultTimerForServer.project = timer.project
+      this.state.defaultTimerForServer.timer = parseInt(timer.elapsed/1000) || 0
+
+
+
+      this.state.defaultTimerForServer.laststarttime = timer.runningSince || null
+
+
+      this.state.timerArray.push({...this.state.defaultTimerForServer})
+
+
+    })
+
+
+    this.state.timerArray.forEach((timer) => {
+
+      if (timer.laststarttime) {
+
+        timer.isCounting = true
+
+
+      }
+
+    })
+
+
+
+      this.setState({isChanged: true})
+
+
+  }
+
+
+  axiosCreateTimer = async(timer) => {
+
+     let res = await axios.post("api/timers",
+
+         {title: timer.title, project: timer.project, id: timer.id,
+
+
+         }
+
+
+
+         );
+
+     console.log("create", res)
+
+
+  }
+
+
+    axiosPutTimer = async(timer) => {
+
+     let res = await axios.put("api/timers",
+
+         {title: timer.title, project: timer.project, id: timer.id,
+
+
+         }
+
+
+
+         );
+
+     console.log("update", res)
+
+
+  }
+
+
+
+
+
+
+
+  axiosDeletetimer = async(id) => {
+
+
+     let res = await axios.delete("api/timers",
+         {data:{id: id}}
+     )
+
+    console.log("delete", res)
+
+  }
+
+// ------------------------------------------------------------------------------------------------
+//
 
   deletetimer = (e, id ) => {
 
@@ -58,7 +183,7 @@ class TimerDashboard extends Component {
     this.state.timerArray.splice(atimerIndex, 1)
     this.setState({isChanged: true})
 
-
+    this.axiosDeletetimer(id)
 
   }
 
@@ -73,13 +198,15 @@ class TimerDashboard extends Component {
     {
       atimer[0].isCounting = true;
 
-
+      this.axiosUpdateStartTimer(atimer[0])
       this.runtimer(atimer[0]);
     }
     
     else {
 
         atimer[0].isCounting = false;
+
+        this.axiosStopTimer(atimer[0])
         // atimer[0].laststarttime = atimer[0].laststarttime ? null : Date.now();
 
       this.clearuptimer(atimer[0]);
@@ -123,8 +250,17 @@ class TimerDashboard extends Component {
   //
   // componentWillMount() {}
   //
-  // componentDidMount() {}
-  //
+  componentDidMount() {
+
+    console.log('componentDidMount')
+
+
+
+    this.axiosGetTimers()
+
+
+
+  }
   // componentWillReceiveProps(nextProps) {}
   //
   // shouldComponentUpdate(nextProps, nextState) {}
@@ -133,13 +269,14 @@ class TimerDashboard extends Component {
   //
   // componentDidUpdate(prevProps, prevState) {
   //
-  //   if (this.state.timerArray.findIndex(timer => timer.isUpdating) === -1 && AddBtn.isClickable ) {
+  //   console.log('didupdate', this.scrollY)
+  //
+  //   window.scrollTo(this.scrollX, this.scrollY);
   //
   //
   //
-  //     AddBtn.isClickable = false
-  //     this.setState({isChanged: true})
-  //   }
+  //
+  //    }
   //
   //
 
@@ -168,14 +305,21 @@ class TimerDashboard extends Component {
     //------------------------------------------------------------------------------
     handleCreate = (e, id) => {
 
+    let isCreate = false
+
     let timerArray = this.state.timerArray
 
     e.preventDefault();
 
     let atimerIndex =  timerArray.findIndex(timer => timer.id === id)
 
-    if (e.target.title.value  && e.target.project.value  ) {
+    if (timerArray[atimerIndex].title === '') {
+        isCreate = true
 
+    }
+
+
+    if (e.target.title.value  && e.target.project.value  ) {
 
 
 
@@ -187,6 +331,18 @@ class TimerDashboard extends Component {
       this.setState({isChanged: true})
 
       AddBtn.isClickable = true
+
+      if (isCreate) {
+
+
+           this.axiosCreateTimer(this.state.timerArray[atimerIndex])
+
+      }
+      else {
+
+        this.axiosPutTimer(this.state.timerArray[atimerIndex])
+
+      }
     }
 
   }
@@ -203,6 +359,10 @@ class TimerDashboard extends Component {
       this.setState({isChanged: true})
 
       AddBtn.isClickable = false
+
+
+
+
     }
 
   }
@@ -232,7 +392,17 @@ class TimerDashboard extends Component {
 
 
 
+
+
+
   render() {
+
+     // this.scrollX = window.scrollX;
+     // this.scrollY = window.scrollY;
+
+
+
+
 
       console.log("Dashboard rendering...", Date.now());
     return (

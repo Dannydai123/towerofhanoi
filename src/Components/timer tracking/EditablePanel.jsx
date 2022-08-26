@@ -66,6 +66,14 @@ handleCancel = () => {
 }
 
 
+componentDidMount () {
+
+    console.log("editablepanal componentDidMount")
+    this.nameInput.focus();
+
+}
+
+
 
   render() {
 
@@ -74,12 +82,15 @@ handleCancel = () => {
     return (
       <div className="card text-left w-50 mx-auto mb-2">
         <div className="card-body">
-          <form onSubmit={(e) => {this.props.handleCreate(e, this.timer.id)} }>
+          <form onSubmit={(e) => {this.props.handleCreate(e, this.timer.id)} }
+
+                >
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Title</label>
               <input
                 type="text"
                 className="form-control"
+                ref={(input) => (this.nameInput = input)}
 
                 aria-describedby="emailHelp"
                 name="title"

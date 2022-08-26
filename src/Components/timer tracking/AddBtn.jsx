@@ -30,7 +30,7 @@ static isClickable = true;
 
 
 
-        <a href="#" className="btn btn-outline-primary"
+        <a href="javascript:void(0)" className="btn btn-outline-primary"
            onClick={(e) => {
              AddBtn.isClickable = !AddBtn.isClickable;
 
