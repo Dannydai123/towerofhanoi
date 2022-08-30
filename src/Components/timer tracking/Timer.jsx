@@ -140,10 +140,10 @@ console.log("stoptimer", res)
     let btnclassname = this.state.isCounting
       ? "btn-outline-danger w-100 btn"
       : " btn-outline-primary w-100 btn";
-
-    const hour = parseInt(elaspedtime / 3600);
-    const minute = parseInt((elaspedtime - hour * 3600) / 60);
-    const second = parseInt(elaspedtime - hour * 3600 - minute * 60);
+    const day = parseInt(elaspedtime/3600/24);
+    const hour = parseInt((elaspedtime - day * 24*3600)/24);
+    const minute = parseInt((elaspedtime - day * 24*3600 -  hour * 3600) / 60);
+    const second = parseInt(elaspedtime - day * 24*3600 - hour * 3600 - minute * 60);
 
     return (
       <div className="card text-left w-50 mx-auto mb-2 ">
@@ -153,9 +153,9 @@ console.log("stoptimer", res)
           <span className="text-muted">{timer.project}</span>
         </div>
         <div className="card-body">
-          <p className="card-title text-center h3 text-muted">
-            {hour.toString().padStart(2, 0)}:{minute.toString().padStart(2, 0)}:
-            {second.toString().padStart(2, 0)}
+          <p className="card-title text-center h3 text-muted">   {day? day.toString().padStart(2, 0) + 'DAYS' : null}
+            {hour.toString().padStart(2, 0) + 'H'}:{minute.toString().padStart(2, 0) +'M'}:
+            {second.toString().padStart(2, 0)+'S'}
           </p>
           <p className="card-text text-right">
             <a
