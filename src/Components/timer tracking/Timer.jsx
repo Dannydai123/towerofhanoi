@@ -141,7 +141,7 @@ console.log("stoptimer", res)
       ? "btn-outline-danger w-100 btn"
       : " btn-outline-primary w-100 btn";
     const day = parseInt(elaspedtime/3600/24);
-    const hour = parseInt((elaspedtime - day * 24*3600)/24);
+    const hour = parseInt((elaspedtime - day * 24*3600) / 3600);
     const minute = parseInt((elaspedtime - day * 24*3600 -  hour * 3600) / 60);
     const second = parseInt(elaspedtime - day * 24*3600 - hour * 3600 - minute * 60);
 

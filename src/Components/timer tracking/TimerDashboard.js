@@ -37,7 +37,7 @@ class TimerDashboard extends Component {
       id: 0,
       title: '',
       project: '',
-      timer: 0,  //elapsed time in second
+      timer: 3600*24+5,  //elapsed time in second
       laststarttime: null,
       isCounting: false,
       isUpdating: false,

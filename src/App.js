@@ -22,6 +22,7 @@ import Navbar from "./Components/Navbar";
 
 import LoginButton from "./Components/loginBtn";
 import Login from "./Components/Login";
+import ToDoListDashboard from "./Components/todolist/ToDoListDashboard";
 
 //-------------------------------------------------
 // import Bagels from "./Components/Bagels";
@@ -57,20 +58,41 @@ import Login from "./Components/Login";
 
 // timer tracking
 
-import TimerDashboard from "./Components/timer tracking/TimerDashboard";
+// import TimerDashboard from "./Components/timer tracking/TimerDashboard";
+//
+// class App extends Component {
+//   render() {
+//     return (
+//       <div className="container">
+//         <p className="h4  text-center mt-2">Timers</p>
+//        < hr />
+//
+//         <TimerDashboard />
+//         {/*<Login />*/}
+//       </div>
+//     );
+//   }
+// }
+
+
+//-------------------------------------------------
+
+
+// Q9 todolist
+//
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <p className="h4  text-center mt-2">Timers</p>
+      <div className="container w-75">
+        <p className="h4  text-center mt-2">Danny's ToDoList</p>
        < hr />
 
-        <TimerDashboard />
+        <ToDoListDashboard />
         {/*<Login />*/}
       </div>
     );
   }
 }
 
-export default App;
+export default App

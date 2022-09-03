@@ -15,9 +15,9 @@ root.render(
       // domain="dannydai.us.auth0.com"
   // clientId="4iVg2j7tw1oAYhc29KDH5Q64ZGr1vozV"
   //     redirectUri={window.location.origin}
-
+   <React.StrictMode>
     <App />
-
+  </React.StrictMode>
 )
 
 )
