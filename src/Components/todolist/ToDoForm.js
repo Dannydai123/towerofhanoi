@@ -100,8 +100,10 @@ class ToDoForm extends Component {
         >
           <option value="all">All</option>
           <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
+          <option value="incomplete">incomplete</option>
         </select>
+
+
       </form>
     );
   }

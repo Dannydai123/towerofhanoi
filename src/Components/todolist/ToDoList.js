@@ -37,7 +37,7 @@ class ToDoList extends Component {
 
     if (listingStatus === "completed") {
       newToDoList = toDoList.filter((todo) => todo.isComplete === true);
-    } else if (listingStatus === "uncompleted") {
+    } else if (listingStatus === "incomplete") {
       newToDoList = toDoList.filter((todo) => todo.isComplete === false);
     } else {
       newToDoList = toDoList;

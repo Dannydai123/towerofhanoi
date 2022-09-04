@@ -85,8 +85,7 @@ class App extends Component {
   render() {
     return (
       <div className="container w-75">
-        <p className="h4  text-center mt-2">Danny's ToDoList</p>
-       < hr />
+
 
         <ToDoListDashboard />
         {/*<Login />*/}

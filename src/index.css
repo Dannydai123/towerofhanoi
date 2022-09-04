@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/*remove outline when focus only for chrome */
+*:focus {
+  outline: none !important;
+
+  box-shadow: none !important;
+}
+
+
