@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:3000';   //dev uses
+// axios.defaults.baseURL = 'http://localhost:3000';   //dev uses
 //axios.defaults.baseURL = 'http://localhost:3000';  // production uses for heroku
 
 const axiosGetObjectList = async (ObjectListURL, newDefaultItem, returnedObjectList) => {
