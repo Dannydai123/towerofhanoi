@@ -1,0 +1,63 @@
+
+.heightfull {
+  height: 800px ;
+
+}
+
+.myrow {
+  height: 40px  ;}
+
+.margin-b {
+  margin-bottom: -5px;
+
+
+}
+
+
+.stick {
+  width: 10px;
+  height: 100px;
+  background-color: #856404;
+
+}
+
+.bottom {
+
+  width: 100%;
+  height: 15px;
+  background-color: #856404;
+    margin-bottom: 0;
+
+
+}
+
+.margin-bottom {
+    margin-bottom: 0px;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-95 {
+
+    width: 95%;
+}
+
+.alerts-border {
+    border: 1px #ff0000 solid;
+
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink { 50% { border-color:#fff ; }  }
+
+.myrounded {
+
+    border-radius: 0.7rem
+}

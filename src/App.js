@@ -23,6 +23,7 @@ import Navbar from "./Components/Navbar";
 import LoginButton from "./Components/loginBtn";
 import Login from "./Components/Login";
 import ToDoListDashboard from "./Components/todolist/ToDoListDashboard";
+import CalcDashboard from "./Components/calc/CalcDashboard";
 
 //-------------------------------------------------
 // import Bagels from "./Components/Bagels";
@@ -77,21 +78,39 @@ import ToDoListDashboard from "./Components/todolist/ToDoListDashboard";
 
 //-------------------------------------------------
 
-
-// Q9 todolist
 //
+// // Q9 todolist
+// //
+//
+// class App extends Component {
+//   render() {
+//     return (
+//       <div className="container w-75">
+//
+//
+//         <ToDoListDashboard />
+//         {/*<Login />*/}
+//       </div>
+//     );
+//   }
+// }
+//
+// export default App
 
-class App extends Component {
-  render() {
-    return (
-      <div className="container w-75">
+// ------------------------------------------------------------------------------------------------
+// // Q10 Calculator
+// //
+//
+// const App= () =>  {
+//
+//     return (
+//       <div className="container w-50 pt-5">
+//
+//
+//         <CalcDashboard />
+//
+//       </div>
+//     );
+//   }
 
-
-        <ToDoListDashboard />
-        {/*<Login />*/}
-      </div>
-    );
-  }
-}
-
-export default App
+// ---------------------------------------

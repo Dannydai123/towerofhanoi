@@ -1,0 +1,38 @@
+#btnlayout {
+
+    height: 500px;
+
+
+
+}
+
+button {
+
+    border: 1px solid white !important;
+    font-size: 2em !important;
+
+
+}
+
+button.darker {
+
+    background-color: #4e555b !important;
+
+
+}
+
+button.darker:active {
+
+    background-color: #95999c !important;
+
+}
+
+
+#screen {
+
+    height: 100px !important;
+    padding-top: 20px  !important;
+    text-vertical-align:  middle !important;
+
+
+}

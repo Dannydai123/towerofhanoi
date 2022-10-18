@@ -29,7 +29,7 @@ import RegisterForm from "./Components/RegisterForm";
 
 
 
-// example of chilren as props
+// example of children as props
 
 class App1 extends Component {
     render() {
