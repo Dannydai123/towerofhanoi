@@ -195,7 +195,9 @@ const App= () =>  {
 
      <div className="container">
       <hr />
-   <p className={"h3 text-success  "}>  RULES</p>
+                 <p className={"h3 text-success  "}>Objective</p>
+                  <ul><li>shift the entire stack of disks from one rod to another rod</li></ul>
+   <p className={"h3 text-success  "}>Rules</p>
     <ul >
 
      <li>Only one disk can be moved at a time.</li>
