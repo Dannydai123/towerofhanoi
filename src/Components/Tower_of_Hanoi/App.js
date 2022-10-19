@@ -172,7 +172,7 @@ const App= () =>  {
 
 
     <hr />
-        <div className="container border heightfull mt-5  align-items-stretch align-items-end   row h-100 mx-auto align-items-end">
+        <div className="container   heightfull mt-5  align-items-stretch align-items-end   row h-100 mx-auto align-items-end">
 
 
             <Tower hanoi={tower1} name={"tower1"} hanoiHandleClickFromUpper={handleClickHanoiandStick}
