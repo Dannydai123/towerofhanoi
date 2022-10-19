@@ -200,7 +200,7 @@ const App= () =>  {
    <p className={"h3 text-success  "}>Rules</p>
     <ul >
 
-     <li>Only one disk can be moved at a time.</li>
+     <li>Only one disk can be moved at a time. click on a disk or a rod then click on another rod or disk as a destination</li>
       <li>
          a disk can only be
         moved if it is the uppermost disk on a stack.
